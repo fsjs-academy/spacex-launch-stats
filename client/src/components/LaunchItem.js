@@ -1,6 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 import Moment from 'react-moment'
+import { Link } from 'react-router-dom'
 
 export const LaunchItem = ({
   launch: {
@@ -25,7 +26,7 @@ export const LaunchItem = ({
           <p>Date: <Moment format="YYYY-MM-DD HH:mm">{launch_date_local}</Moment></p>
         </div>
         <div className="col-md-3">
-          <button className="btn btn-secondary">Launch Details</button>
+          <Link className="btn btn-secondary" to={`/launch/${flight_number}`}>Launch Details</Link>
         </div>
       </div>
     </div>
