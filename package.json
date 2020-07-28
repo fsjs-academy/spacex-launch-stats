@@ -4,7 +4,10 @@
   "description": "App that list SpaceX Launch missions, for educational purposes.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "new-version": "lerna version --conventional-commits --yes",
+    "bootstrap": "lerna bootstrap",
+    "dev": "lerna run dev --scope={@spacex-stats/graphql,@spacex-stats/web}"
   },
   "repository": {
     "type": "git",
@@ -20,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/carlosazaustre/spacex-launch-stats/issues"
   },
-  "homepage": "https://github.com/carlosazaustre/spacex-launch-stats#readme"
+  "homepage": "https://github.com/carlosazaustre/spacex-launch-stats#readme",
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  }
 }
