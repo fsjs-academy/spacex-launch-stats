@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const resolvers = {
+export const launchResolvers = {
   Query: {
     launches: () => {
       return axios
@@ -12,15 +12,5 @@ export const resolvers = {
         .get(`https://api.spacexdata.com/v3/launches/${flight_number}`)
         .then(res => res.data);
     },
-    rockets: () => {
-      return axios
-        .get('https://api.spacexdata.com/v3/rockets')
-        .then(res => res.data);
-    },
-    rocket: (_, { id }) => {
-      return axios
-        .get(`https://api.spacexdata.com/v3/rockets/${id}`)
-        .then(res => res.data);
-    },
-  },
+  }
 };
