@@ -12,6 +12,6 @@ export const LaunchTypeDefs = gql`
 
   extend type Query {
     launches: [Launch]
-    launch: Launch
+    launch(flight_number: Int): Launch
   }
 `;
