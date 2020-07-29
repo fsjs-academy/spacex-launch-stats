@@ -1,16 +1,8 @@
-import axios from 'axios';
+import { Rocket } from '@spacex-stats/domain';
 
 export const rocketResolvers = {
   Query: {
-    rockets: () => {
-      return axios
-        .get('https://api.spacexdata.com/v3/rockets')
-        .then(res => res.data);
-    },
-    rocket: (_, { id }) => {
-      return axios
-        .get(`https://api.spacexdata.com/v3/rockets/${id}`)
-        .then(res => res.data);
-    },
+    rockets: async () => await Rocket.getAllRockets(),
+    rocket: async (_, { id }) => await Rocket.getRocketById(id),
   }
 };
