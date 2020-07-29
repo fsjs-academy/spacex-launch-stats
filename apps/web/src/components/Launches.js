@@ -1,20 +1,9 @@
 import React from 'react';
-import { gql } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';
 
 import { LaunchItem } from './LaunchItem'
 import { MissionKey } from './MissionKey'
-
-const LAUNCHES_QUERY = gql`
-  query LaunchesQuery {
-    launches {
-      flight_number
-      mission_name
-      launch_date_local
-      launch_success
-    }
-  }
-`;
+import { LAUNCHES_QUERY } from '../queries';
 
 export const Launches = () => {
   const { loading, error, data } = useQuery(LAUNCHES_QUERY);
